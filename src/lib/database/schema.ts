@@ -1,26 +1,26 @@
-import { sql } from 'drizzle-orm';
-import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { bigint, pgTable, varchar, timestamp } from 'drizzle-orm/pg-core';
 
-export const usersTable = sqliteTable('users', {
-	id: text('id').primaryKey().notNull(),
+export const usersTable = pgTable('users', {
+	id: varchar('id').primaryKey().notNull(),
 
-	name: text('name').notNull(),
+	name: varchar('name').notNull(),
 
-	email: text('email').notNull().unique(),
+	email: varchar('email').notNull().unique(),
 
-	password: text('password').notNull(),
+	password: varchar('password').notNull(),
 
-	createdAt: text('created_at').default(sql`CURRENT_TIMESTAMP`)
+	createdAt: timestamp('created_at').defaultNow()
 });
 
-export const usersSessionsTable = sqliteTable('users_sessions', {
-	id: text('id').primaryKey().notNull(),
+export const usersSessionsTable = pgTable('users_sessions', {
+	id: varchar('id').primaryKey().notNull(),
 
-	userId: text('user_id')
+	userId: varchar('user_id')
 		.notNull()
 		.references(() => usersTable.id),
 
-	expiresAt: integer('expires_at').notNull()
+	expiresAt: bigint('expires_at', { mode: 'number' })
 });
 
 export type UserInsertSchema = typeof usersTable.$inferInsert;
+export type UsersSessionsInsertSchema = typeof usersSessionsTable.$inferInsert;
