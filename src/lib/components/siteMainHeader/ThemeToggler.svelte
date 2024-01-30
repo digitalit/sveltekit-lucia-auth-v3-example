@@ -5,7 +5,7 @@
 	import * as DropdownMenu from '$components/ui/dropdown-menu';
 </script>
 
-<DropdownMenu.Root positioning={{ placement: 'bottom-end' }}>
+<DropdownMenu.Root>
 	<DropdownMenu.Trigger asChild let:builder>
 		<Button builders={[builder]} variant="outline" size="icon" class="text-2xl">
 			<iconify-icon icon="line-md:sun-rising-loop" class="dark:hidden"></iconify-icon>
