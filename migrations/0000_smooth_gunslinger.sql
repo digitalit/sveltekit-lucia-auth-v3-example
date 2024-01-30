@@ -1,15 +1,15 @@
 CREATE TABLE IF NOT EXISTS "users_sessions" (
-	"id" text PRIMARY KEY NOT NULL,
-	"user_id" text NOT NULL,
-	"expires_at" integer NOT NULL
+	"id" varchar PRIMARY KEY NOT NULL,
+	"user_id" varchar NOT NULL,
+	"expires_at" timestamp NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "users" (
-	"id" text PRIMARY KEY NOT NULL,
-	"name" text NOT NULL,
-	"email" text NOT NULL,
-	"password" text NOT NULL,
-	"created_at" text DEFAULT CURRENT_TIMESTAMP,
+	"id" varchar PRIMARY KEY NOT NULL,
+	"name" varchar NOT NULL,
+	"email" varchar NOT NULL,
+	"password" varchar NOT NULL,
+	"created_at" timestamp DEFAULT now(),
 	CONSTRAINT "users_email_unique" UNIQUE("email")
 );
 --> statement-breakpoint

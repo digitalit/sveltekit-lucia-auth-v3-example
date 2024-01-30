@@ -6,7 +6,6 @@
 	import { toast } from 'svelte-sonner';
 
 	import { Toaster } from '$components/ui/sonner';
-	import { Bar } from '@bobbymannino/svelte-progress';
 	import { ModeWatcher } from 'mode-watcher';
 	import { setupViewTransition } from 'sveltekit-view-transition';
 
@@ -32,11 +31,10 @@
 
 <MetaTags {...metaTags} />
 
-<Bar color="#6D28D9" size="big" speed="fast" />
 <Toaster richColors closeButton position={'top-center'} />
 <ModeWatcher />
 
-<div class="flex flex-col h-svh">
+<div class="flex h-svh flex-col">
 	<SiteMainHeader />
 
 	<main class="container flex-1 p-2 pb-10">

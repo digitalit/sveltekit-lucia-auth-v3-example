@@ -1,1 +1,0 @@
-ALTER TABLE "users_sessions" ALTER COLUMN "id" SET DATA TYPE serial;
