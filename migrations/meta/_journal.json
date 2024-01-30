@@ -50,6 +50,20 @@
       "when": 1706603119780,
       "tag": "0006_curious_jazinda",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1706606371378,
+      "tag": "0007_robust_justice",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1706606405669,
+      "tag": "0008_aromatic_spacker_dave",
+      "breakpoints": true
     }
   ]
 }

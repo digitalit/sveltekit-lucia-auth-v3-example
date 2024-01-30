@@ -1,4 +1,4 @@
-import { bigint, pgTable, varchar, timestamp } from 'drizzle-orm/pg-core';
+import { pgTable, varchar, timestamp } from 'drizzle-orm/pg-core';
 
 export const usersTable = pgTable('users', {
 	id: varchar('id').primaryKey().notNull(),
@@ -19,7 +19,10 @@ export const usersSessionsTable = pgTable('users_sessions', {
 		.notNull()
 		.references(() => usersTable.id),
 
-	expiresAt: bigint('expires_at', { mode: 'number' })
+	expiresAt: timestamp('expires_at', {
+		withTimezone: false,
+		mode: 'date'
+	}).notNull()
 });
 
 export type UserInsertSchema = typeof usersTable.$inferInsert;
