@@ -7,7 +7,6 @@
 
 	import { Toaster } from '$components/ui/sonner';
 	import { ModeWatcher } from 'mode-watcher';
-	import { setupViewTransition } from 'sveltekit-view-transition';
 
 	import extend from 'just-extend';
 	import { MetaTags } from 'svelte-meta-tags';
@@ -23,8 +22,6 @@
 	$: if ($flash) {
 		toast.info($flash.message);
 	}
-
-	setupViewTransition();
 
 	$: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
 </script>

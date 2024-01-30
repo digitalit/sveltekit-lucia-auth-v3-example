@@ -20,4 +20,3 @@ export const usersSessionsTable = pgTable('users_sessions', {
 });
 
 export type UserInsertSchema = typeof usersTable.$inferInsert;
-// export type UsersSessionsInsertSchema = typeof usersSessionsTable.$inferInsert;
