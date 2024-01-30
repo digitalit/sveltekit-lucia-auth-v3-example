@@ -8,6 +8,20 @@
       "when": 1706608460242,
       "tag": "0000_smooth_gunslinger",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1706638410794,
+      "tag": "0001_sparkling_stellaris",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1706639505577,
+      "tag": "0002_clammy_terror",
+      "breakpoints": true
     }
   ]
 }
